@@ -46,3 +46,5 @@ services:
       test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
       timeout: 30s
       interval: 10s
+    ports:
+      - "8088:8088"
