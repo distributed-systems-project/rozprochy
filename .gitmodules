@@ -1,0 +1,18 @@
+[submodule "reservation-service"]
+	path = reservation-service
+	url = https://github.com/distributed-systems-project/reservation-service
+[submodule "employee-service"]
+	path = employee-service
+	url = https://github.com/distributed-systems-project/employee-service
+[submodule "configuration-service"]
+	path = configuration-service
+	url = https://github.com/distributed-systems-project/configuration-service
+[submodule "gateway-service"]
+	path = gateway-service
+	url = https://github.com/distributed-systems-project/gateway-service
+[submodule "discovery-service"]
+	path = discovery-service
+	url = https://github.com/distributed-systems-project/discovery-service
+[submodule "building-service"]
+	path = building-service
+	url = https://github.com/distributed-systems-project/building-service
