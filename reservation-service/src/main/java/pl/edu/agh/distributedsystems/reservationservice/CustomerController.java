@@ -13,46 +13,18 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class MainController {
-
-    @Autowired
-    ReservationRepository reservationRepository;
+@RequestMapping("/customers")
+public class CustomerController {
 
     @Autowired
     CustomerRepository customerRepository;
 
-    @RequestMapping("/")
-    public String index() {
-        return "Hello!";
-    }
-
-    @PostMapping("/reservations")
-    public ResponseEntity<Reservation> createReservation(@Valid @RequestBody Reservation reservation) {
-        return ResponseEntity.ok(reservationRepository.save(reservation));
-    }
-
-    @GetMapping("/reservations/{id}")
-    public ResponseEntity<Reservation> getReservation(@PathVariable(value = "id") Long reservationID) {
-        Optional<Reservation> reservation = reservationRepository.findById(reservationID);
-
-        if(reservation.isPresent()) {
-            return ResponseEntity.ok(reservation.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    @GetMapping("/reservations")
-    public ResponseEntity<List<Reservation>> getReservations() {
-        return ResponseEntity.ok(reservationRepository.findAll());
-    }
-
-    @PostMapping("/customers")
+    @PostMapping
     public ResponseEntity<Customer> createCustomer(@Valid @RequestBody Customer customer) {
         return ResponseEntity.ok(customerRepository.save(customer));
     }
 
-    @GetMapping("/customers/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable(value = "id") Long customerID) {
         Optional<Customer> customer = customerRepository.findById(customerID);
 
@@ -63,7 +35,7 @@ public class MainController {
         }
     }
 
-    @GetMapping("/customers")
+    @GetMapping
     public ResponseEntity<List<Customer>> getCustomers() {
         return ResponseEntity.ok(customerRepository.findAll());
     }

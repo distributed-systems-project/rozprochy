@@ -19,5 +19,6 @@ public class Reservation {
     private Date startDate;
     private Date endDate;
 
+    private Integer hotelId;
     private Integer roomNumber;
 }
