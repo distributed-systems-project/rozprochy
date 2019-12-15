@@ -1,0 +1,56 @@
+version: '3.7'    
+
+services:
+  configuration:
+    image: 'todrzywolek/configuration-service:0.0.1'
+    deploy:
+      replicas: 3
+    healthcheck:
+      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      timeout: 30s
+      interval: 10s
+  discovery:
+    image: 'todrzywolek/discovery-service:0.0.1'
+    depends_on:
+        - "configuration"
+    deploy:
+      replicas: 2
+    healthcheck:
+      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      timeout: 30s
+      interval: 10s
+    ports:
+      - "8761:8761"
+  gateway:
+    image: 'todrzywolek/gateway-service:0.0.1'
+    deploy:
+      replicas: 2
+    depends_on:
+        - "configuration"
+        - "discovery"
+    ports:
+      - "8088:8088"
+  building:
+    image: 'todrzywolek/building-service:0.0.1'
+    depends_on:
+        - "configuration"
+        - "discovery"
+    deploy:
+      replicas: 2
+
+  employee:
+    image: 'todrzywolek/employee-service:0.0.1'
+    depends_on:
+        - "configuration"
+        - "discovery"
+    deploy:
+      replicas: 2
+
+  reservation:
+    image: 'todrzywolek/reservation-service:0.0.1'
+    depends_on:
+        - "configuration"
+        - "discovery"
+    deploy:
+      replicas: 2
+
