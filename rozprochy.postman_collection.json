@@ -11,11 +11,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/building/buildings",
+					"raw": "localhost:8080/building/buildings",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"building",
 						"buildings"
@@ -30,11 +30,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/building/buildings/1",
+					"raw": "localhost:8080/building/buildings/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"building",
 						"buildings",
@@ -66,11 +66,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8088/building/buildings",
+					"raw": "localhost:8080/building/buildings",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"building",
 						"buildings"
@@ -85,11 +85,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/employee/employees",
+					"raw": "localhost:8080/employee/employees",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"employee",
 						"employees"
@@ -112,7 +112,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Krzysiu Kowalski\",\n    \"age\": 25,\n    \"position\": \"Barman\"\n}",
+					"raw": "{\n    \"name\": \"Krzysiu Kowalski\",\n    \"age\": 25,\n    \"position\": \"Barman\",\n    \"hotelId\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -120,11 +120,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8088/employee/employees",
+					"raw": "localhost:8080/employee/employees",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"employee",
 						"employees"
@@ -139,11 +139,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/employee/employees/1",
+					"raw": "localhost:8080/employee/employees/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"employee",
 						"employees",
@@ -159,11 +159,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/employee/employees/hotels/1",
+					"raw": "localhost:8080/employee/employees/hotels/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"employee",
 						"employees",
@@ -180,11 +180,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/reservation/reservations",
+					"raw": "localhost:8080/reservation/reservations",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"reservation",
 						"reservations"
@@ -199,11 +199,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/reservation/reservations/1",
+					"raw": "localhost:8080/reservation/reservations/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"reservation",
 						"reservations",
@@ -227,7 +227,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"customerName\": \"Ireneusz Wydmuch\",\n    \"customerAddress\": \"z Pogwizdowa\",\n    \"customerPhoneAddress\": \"321654987\",\n    \"placedAtDate\": \"2012-04-23T18:25:43.511Z\",\n    \"startDate\": \"2012-05-23T18:25:43.511Z\",\n    \"endDate\": \"2012-06-23T18:25:43.511Z\",\n    \"hotelId\": 1,\n    \"roomNumber\": 6\n}",
+					"raw": "{\n    \"customerId\": 1,\n    \"placedAtDate\": \"2012-04-23T18:25:43.511Z\",\n    \"startDate\": \"2012-05-23T18:25:43.511Z\",\n    \"endDate\": \"2012-06-23T18:25:43.511Z\",\n    \"hotelId\": 1,\n    \"roomNumber\": 6\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -235,11 +235,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8088/reservation/reservations",
+					"raw": "localhost:8080/reservation/reservations",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"reservation",
 						"reservations"
@@ -254,11 +254,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/reservation/customers",
+					"raw": "localhost:8080/reservation/customers",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"reservation",
 						"customers"
@@ -273,15 +273,50 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8088/reservation/customers/1",
+					"raw": "localhost:8080/reservation/customers/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8088",
+					"port": "8080",
 					"path": [
 						"reservation",
 						"customers",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Ireneusz\",\n    \"secondName\": \"Wydmuch\",\n    \"phoneNumber\": \"123321123\",\n    \"address\": \"z Pogwizdowa\",\n    \"pesel\": \"321123321\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/reservation/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservation",
+						"customers"
 					]
 				}
 			},
