@@ -7,6 +7,20 @@
 	"item": [
 		{
 			"name": "Get all buildings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5bac1693-bbe0-4aa4-b7df-4d117c4b3316",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -26,6 +40,20 @@
 		},
 		{
 			"name": "Get specific building",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d45fa01-d853-469e-aa66-6a76b060ebd4",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -46,6 +74,20 @@
 		},
 		{
 			"name": "Add building",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d98664dc-9244-4e2f-9290-aba5728196cc",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -81,6 +123,20 @@
 		},
 		{
 			"name": "Get all employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bebd3641-7a48-4296-ad0d-7c7b0711690f",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -100,6 +156,20 @@
 		},
 		{
 			"name": "Add employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96f257fd-ad05-41da-a575-6933c5fc5dbf",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -135,6 +205,20 @@
 		},
 		{
 			"name": "Get specific employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c629d844-7f86-4cb1-9ddc-04091d0b3a9c",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -155,6 +239,20 @@
 		},
 		{
 			"name": "Get employees for hotel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d431424c-6470-4327-a502-742f1f8a8858",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -175,39 +273,49 @@
 			"response": []
 		},
 		{
-			"name": "Get reservations",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/reservation/reservations",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"reservation",
-						"reservations"
-					]
+			"name": "Add customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0908a98-9496-41ac-a291-a291b5e4658c",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get specific reservation",
+			],
 			"request": {
-				"method": "GET",
-				"header": [],
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Ireneusz\",\n    \"secondName\": \"Wydmuch\",\n    \"phoneNumber\": \"123321123\",\n    \"address\": \"z Pogwizdowa\",\n    \"pesel\": \"321123321\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/reservation/reservations/1",
+					"raw": "localhost:8080/reservation/customers",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"reservation",
-						"reservations",
-						"1"
+						"customers"
 					]
 				}
 			},
@@ -215,6 +323,20 @@
 		},
 		{
 			"name": "Add reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34e57f17-913f-4b7d-bc9b-067437138113",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -249,7 +371,88 @@
 			"response": []
 		},
 		{
+			"name": "Get reservations",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46d81d9d-591d-4f65-a97d-af79fe6e6b4b",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reservation/reservations",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservation",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get specific reservation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4822770b-4455-4c1f-a2cd-8907067945cb",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reservation/reservations/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservation",
+						"reservations",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get customers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "493d352d-631c-4e03-9c90-5cf325c8e464",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -269,6 +472,20 @@
 		},
 		{
 			"name": "Get specific customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e084746d-72ae-4063-bbaa-8ba8513e4aba",
+						"exec": [
+							"pm.test(\"response is OK\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -282,41 +499,6 @@
 						"reservation",
 						"customers",
 						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add customer",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"firstName\": \"Ireneusz\",\n    \"secondName\": \"Wydmuch\",\n    \"phoneNumber\": \"123321123\",\n    \"address\": \"z Pogwizdowa\",\n    \"pesel\": \"321123321\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8080/reservation/customers",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"reservation",
-						"customers"
 					]
 				}
 			},
