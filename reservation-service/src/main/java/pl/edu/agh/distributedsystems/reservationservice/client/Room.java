@@ -10,7 +10,6 @@ public class Room {
     private int floorNumber;
     private double area;
     private RoomType roomType;
-    private Building building;
 
     protected Room() {
     }
