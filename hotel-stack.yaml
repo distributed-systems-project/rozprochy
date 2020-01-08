@@ -6,7 +6,7 @@ services:
     deploy:
       replicas: 3
     healthcheck:
-      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
       timeout: 30s
       interval: 10s
   discovery:
@@ -16,7 +16,7 @@ services:
     deploy:
       replicas: 2
     healthcheck:
-      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
       timeout: 30s
       interval: 10s
     ports:
@@ -29,7 +29,7 @@ services:
         - "configuration"
         - "discovery"
     ports:
-      - "8088:8088"
+      - "8080:8080"
   building:
     image: 'todrzywolek/building-service:0.0.1'
     depends_on:
@@ -53,4 +53,3 @@ services:
         - "discovery"
     deploy:
       replicas: 2
-

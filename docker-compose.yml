@@ -4,7 +4,7 @@ services:
   configuration:
     image: 'configuration-service:0.0.1-SNAPSHOT'
     healthcheck:
-      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
       timeout: 30s
       interval: 10s
 
@@ -13,7 +13,7 @@ services:
     depends_on:
         - "configuration"
     healthcheck:
-      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
       timeout: 30s
       interval: 10s
 
@@ -23,7 +23,7 @@ services:
         - "configuration"
         - "discovery"
     healthcheck:
-      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
       timeout: 30s
       interval: 10s
 
@@ -33,7 +33,7 @@ services:
         - "configuration"
         - "discovery"
     healthcheck:
-      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
       timeout: 30s
       interval: 10s
 
@@ -43,7 +43,7 @@ services:
         - "configuration"
         - "discovery"
     healthcheck:
-      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
       timeout: 30s
       interval: 10s
 
@@ -53,8 +53,8 @@ services:
         - "configuration"
         - "discovery"
     healthcheck:
-      test: [ "CMD", "curl" ,"localhost:8088/actuator/health" ]
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
       timeout: 30s
       interval: 10s
     ports:
-      - "8088:8088"
+      - "8080:8080"
