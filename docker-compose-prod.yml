@@ -1,0 +1,60 @@
+version: '3'
+services:
+
+  configuration:
+    image: 'todrzywolek/configuration-service:0.0.1'
+    healthcheck:
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
+      timeout: 30s
+      interval: 10s
+
+  discovery:
+    image: 'todrzywolek/discovery-service:0.0.1'
+    depends_on:
+        - "configuration"
+    healthcheck:
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
+      timeout: 30s
+      interval: 10s
+
+  building:
+    image: 'todrzywolek/building-service:0.0.1'
+    depends_on:
+        - "configuration"
+        - "discovery"
+    healthcheck:
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
+      timeout: 30s
+      interval: 10s
+
+  employee:
+    image: 'todrzywolek/employee-service:0.0.1'
+    depends_on:
+        - "configuration"
+        - "discovery"
+    healthcheck:
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
+      timeout: 30s
+      interval: 10s
+
+  reservation:
+    image: 'todrzywolek/reservation-service:0.0.1'
+    depends_on:
+        - "configuration"
+        - "discovery"
+    healthcheck:
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
+      timeout: 30s
+      interval: 10s
+
+  gateway:
+    image: 'todrzywolek/gateway-service:0.0.1'
+    depends_on:
+        - "configuration"
+        - "discovery"
+    healthcheck:
+      test: [ "CMD", "curl" ,"localhost:8080/actuator/health" ]
+      timeout: 30s
+      interval: 10s
+    ports:
+      - "8080:8080"
